@@ -15,7 +15,7 @@ class MainController {
         return promotions
     }
 
-    fun addPromoById(id: String?): Promotion {
+    fun getPromoById(id: String?): Promotion {
         return promotions[id!!.toInt()]!!
     }
 

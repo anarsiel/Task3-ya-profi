@@ -22,7 +22,7 @@ fun Route.mainRouting(mainController: MainController) {
 
     get("/promo/{id}") {
         val promoId = call.parameters["id"]
-        call.respond(mainController.deletePromoById(promoId))
+        call.respond(mainController.getPromoById(promoId))
     }
 
     put("/promo/{id}") {
@@ -41,6 +41,6 @@ fun Route.mainRouting(mainController: MainController) {
         val promoId = call.parameters["id"]
         val participant = call.receive<Participant>()
         mainController.addParticipantToPromo(promoId, participant)
-        call.respondText("Promotion added", status = HttpStatusCode.Created)
+        call.respondText("Participant added", status = HttpStatusCode.Created)
     }
 }
